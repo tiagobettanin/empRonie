@@ -1,39 +1,5 @@
 # empRonie
 
-# Empreendedorismo na Prática: Da Ideia ao Plano de Negócios
-**Professor Dr. Ronie Galeano**
-
-## Transformando Sonhos em Realidade
-Este livro, escrito pelo Professor Doutor Ronie Galeano, oferece um guia prático e inspirador para quem deseja empreender com segurança e estratégia. Com base em sua vasta experiência em administração, marketing e empreendedorismo, o autor compartilha insights valiosos e ferramentas testadas para transformar ideias brilhantes em negócios prósperos e sustentáveis. Uma jornada completa do conceito inicial até a implementação de um plano de negócios robusto, pensado especialmente para estudantes universitários, empreendedores iniciantes e pequenos empresários que buscam crescimento e inovação.
-
----
-
-## Sobre o Professor Dr. Ronie Galeano
-* Mestre e Doutor em Administração, com vasta experiência acadêmica e profissional que se estende por mais de duas décadas.
-* Autor de livros reconhecidos no Brasil e no exterior nas áreas de administração, marketing e empreendedorismo, possui uma sólida trajetória como pesquisador, com diversos artigos publicados em revistas científicas especializadas.
-* Durante vinte e cinco anos, atuou como consultor estratégico em segmentos variados, incluindo indústrias moveleiras, confecções, cooperativas e concessionárias automotivas.
-* Atualmente, presta consultoria pela Universidade e continua a exercer sua veia empreendedora como empresário ativo.
-* Sua linha de pesquisa foca especialmente em inovação, com ênfase em inovação aberta, contribuindo significativamente para o desenvolvimento e aplicação de práticas inovadoras no meio empresarial brasileiro.
-
----
-
-## Minha Motivação para Escrever Este Livro
-Escrever este livro é um reflexo do meu compromisso profundo em compartilhar conhecimentos adquiridos ao longo de anos de estudo intenso e experiência prática no campo da administração, marketing e empreendedorismo. Como professor universitário, pesquisador dedicado e consultor empresarial, percebo constantemente que muitos profissionais talentosos e aspirantes a empreendedores enfrentam dificuldades significativas para transformar suas ideias promissoras em negócios bem-sucedidos e verdadeiramente sustentáveis. Minha motivação principal é oferecer um guia prático, acessível e inspirador que ajude a preencher essa lacuna crítica no mercado, proporcionando ferramentas testadas, metodologias comprovadas e insights valiosos que facilitem genuinamente a jornada empreendedora de cada leitor.
-
-> "Acredito firmemente que o empreendedorismo é uma força poderosa e transformadora para a inovação e o desenvolvimento econômico sustentável."
-
-É precisamente a capacidade única de identificar oportunidades latentes, inovar constantemente e superar desafios complexos que impulsiona a criação de valor real e a transformação positiva da sociedade como um todo.
-
----
-
-## Agradecimentos
-* **À minha esposa querida, Eliane,** por todo o apoio incondicional e amoroso, especialmente nos momentos mais desafiadores desta jornada, permitindo que eu me dedicasse inteiramente a esta obra com a tranquilidade necessária para criar algo verdadeiramente especial.
-* **A toda a minha família,** expresso minha profunda e eterna gratidão, em especial à minha mãe, Annalice, que, apesar dos seus oitenta e nove anos e da distância física, me apoiou com toda a sua força inabalável e amor infinito. Sua dedicação maternal e incentivo constante foram absolutamente essenciais para que eu pudesse concluir este projeto com sucesso.
-* **Nina e Beethoven:** Meus filhos de quatro patas, que mesmo privados de alguns passeios e da minha presença constante, permaneceram fielmente ao meu lado durante todo o processo criativo.
-* **Zack:** Que já virou estrelinha no céu, mas permanece sempre vivo em meus pensamentos e no meu coração, inspirando cada palavra escrita.
-
----
-
 # Capítulo 1: Conceitos Fundamentais
 Compreendendo as diferenças essenciais entre Empreendedor, Empreendedorismo e Empresário.
 
