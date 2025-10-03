@@ -229,7 +229,3 @@ Processo de atribuição de valor monetário a produtos ou serviços, consideran
 
 ## Integração: Design Thinking e Gestão Financeira
 A integração entre a metodologia criativa (Design Thinking, Canvas) e o rigor financeiro é fundamental para transformar ideias em negócios sustentáveis e escaláveis.
-
----
-
-> Agora é hora de colocar esses conceitos em prática e transformar suas ideias em realidade
