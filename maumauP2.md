@@ -90,16 +90,16 @@ Com base no material das Aulas 08 e 09, aqui está um resumo geral da teoria, f�
         * <img src="https://latex.codecogs.com/svg.latex?T_p = \frac{\pi}{\omega_n\sqrt{1-\zeta^2}}" alt="T_p = pi / (omega_n * sqrt(1-zeta^2))"/> ou <img src="https://latex.codecogs.com/svg.latex?T_p = \frac{\pi}{\omega_d}" alt="T_p = pi / omega_d"/>
     * **Ultrapassagem Percentual (%UP):** O quanto a resposta ultrapassa o valor final.
         * <img src="https://latex.codecogs.com/svg.latex?\%UP=100 \times e^{-(\zeta\pi/\sqrt{1-\zeta^{2}})}" alt="%UP = 100 * exp(-(zeta*pi) / sqrt(1-zeta^2))"/>
-    * **Tempo de Acomodação (<img src="https.latex.codecogs.com/svg.latex?T_s" alt="T_s"/>):** Tempo para ficar dentro de $\pm$2% do valor final.
+    * **Tempo de Acomodação (<img src="https://latex.codecogs.com/svg.latex?T_s" alt="T_s"/>):** Tempo para ficar dentro de $\pm$2% do valor final.
         * <img src="https://latex.codecogs.com/svg.latex?T_s = \frac{4}{\zeta\omega_n}" alt="T_s = 4 / (zeta*omega_n)"/> ou <img src="https://latex.codecogs.com/svg.latex?T_s = \frac{4}{\sigma_d}" alt="T_s = 4 / sigma_d"/>
-    * **Tempo de Subida (<img src="https.latex.codecogs.com/svg.latex?T_r" alt="T_r"/>):** Tempo de 10% a 90% do valor final. É obtido a partir de gráficos ou tabelas.
+    * **Tempo de Subida (<img src="https://latex.codecogs.com/svg.latex?T_r" alt="T_r"/>):** Tempo de 10% a 90% do valor final. É obtido a partir de gráficos ou tabelas.
 
 **Exemplos:**
 
 * **Exemplo 4.4:** Classificar sistemas com base em <img src="https://latex.codecogs.com/svg.latex?\zeta" alt="zeta"/>.
     * <img src="https://latex.codecogs.com/svg.latex?G(s) = \frac{12}{s^2+8s+12}" alt="G(s) = 12 / (s^2 + 8s + 12)"/> $\implies$ <img src="https://latex.codecogs.com/svg.latex?\zeta=1.155" alt="zeta = 1.155"/> (Superamortecido).
     * <img src="https://latex.codecogs.com/svg.latex?G(s) = \frac{16}{s^2+8s+16}" alt="G(s) = 16 / (s^2 + 8s + 16)"/> $\implies$ <img src="https://latex.codecogs.com/svg.latex?\zeta=1" alt="zeta = 1"/> (Criticamente Amortecido).
-    * <img src="https://latex.codecogs.com/svg.latex?G(s) = \frac{20}{s^2+8s+20}" alt="G(s) = 20 / (s^2 + 8s + 20)"/> $\implies$ <img src="https://latex.codecogs.com/svg.latex?\zeta=0.894" alt="zeta = 0.894"/> (Subamortecido).
+    * <img src="https://latex.codecogs.com/svg.latex?G(s) = \frac{20}{s^2+8s+20}" alt="G(s) = 20 / (s^2 + 8s + 20)"/> $\implies$ <img src="httpsK" alt="zeta = 0.894"/> (Subamortecido).
 * **Exemplo 4.5:** Calcular métricas a partir da função de transferência.
     * **Problema:** <img src="https://latex.codecogs.com/svg.latex?G(s) = \frac{100}{s^2+15s+100}" alt="G(s) = 100 / (s^2 + 15s + 100)"/>.
     * **Solução:** Calcula-se <img src="https://latex.codecogs.com/svg.latex?\omega_n=10" alt="omega_n = 10"/> e <img src="https://latex.codecogs.com/svg.latex?\zeta=0.75" alt="zeta = 0.75"/>. Usando as fórmulas, obtém-se <img src="https://latex.codecogs.com/svg.latex?T_p=0.475" alt="T_p = 0.475"/>s, <img src="https://latex.codecogs.com/svg.latex?\%UP=2.838" alt="%UP = 2.838"/> e <img src="https://latex.codecogs.com/svg.latex?T_s=0.533" alt="T_s = 0.533"/>s.
@@ -132,4 +132,4 @@ Com base no material das Aulas 08 e 09, aqui está um resumo geral da teoria, f�
 | **2ª Ordem (Métricas)** | <img src="https://latex.codecogs.com/svg.latex?\omega_d = \omega_n\sqrt{1-\zeta^2}" alt="omega_d = omega_n * sqrt(1-zeta^2)"/> | **Frequência Amortecida ($\omega_d$):** A frequência de oscilação real de um sistema subamortecido. | 09 |
 | **2ª Ordem (Métricas)** | <img src="https://latex.codecogs.com/svg.latex?\sigma_d = \zeta\omega_n" alt="sigma_d = zeta * omega_n"/> | **Decaimento Exponencial ($\sigma_d$):** A parte real do polo subamortecido, que define a velocidade de decaimento. | 09 |
 | **2ª Ordem (Métricas)** | <img src="https://latex.codecogs.com/svg.latex?T_p = \frac{\pi}{\omega_d}" alt="T_p = pi / omega_d"/> | Forma alternativa para o Instante de Pico, usando a frequência amortecida. | 09 |
-| **2ª Ordem (Métricas)** | <img src="https.latex.codecogs.com/svg.latex?T_s = \frac{4}{\sigma_d}" alt="T_s = 4 / sigma_d"/> | Forma alternativa para o Tempo de Acomodação, usando o fator de decaimento. | 09 |
+| **2ª Ordem (Métricas)** | <img src="httpsG" alt="T_s = 4 / sigma_d"/> | Forma alternativa para o Tempo de Acomodação, usando o fator de decaimento. | 09 |
