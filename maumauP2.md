@@ -133,3 +133,141 @@ Com base no material das Aulas 08 e 09, aqui está um resumo geral da teoria, f�
 | **2ª Ordem (Métricas)** | <img src="https://latex.codecogs.com/svg.latex?\sigma_d = \zeta\omega_n" alt="sigma_d = zeta * omega_n"/> | **Decaimento Exponencial ($\sigma_d$):** A parte real do polo subamortecido, que define a velocidade de decaimento. | 09 |
 | **2ª Ordem (Métricas)** | <img src="https://latex.codecogs.com/svg.latex?T_p = \frac{\pi}{\omega_d}" alt="T_p = pi / omega_d"/> | Forma alternativa para o Instante de Pico, usando a frequência amortecida. | 09 |
 | **2ª Ordem (Métricas)** | <img src="httpsG" alt="T_s = 4 / sigma_d"/> | Forma alternativa para o Tempo de Acomodação, usando o fator de decaimento. | 09 |
+
+#Aula 10
+
+# Aula 10: Redução de Subsistemas e Análise de Resposta Transitória
+
+Este documento resume os conceitos de redução de diagramas de blocos e a subsequente análise de resposta transitória de sistemas de controle.
+
+## 1\. Redução de Diagramas de Blocos
+
+O objetivo principal é simplificar um diagrama de sistema complexo em uma única função de transferência, $T(s) = C(s) / R(s)$.
+
+### 1.1. Blocos em Série
+
+  * **Descrição:** Blocos conectados sequencialmente, onde a saída de um é a entrada do próximo.
+  * **Regra:** Multiplicam-se as funções de transferência.
+  * **Equivalente:** $G_{eq}(s) = G_1(s) \cdot G_2(s) \cdot G_3(s)$
+
+<!-- end list -->
+
+```mermaid
+graph LR
+    R(s) --> G1[G1(s)] --> G2[G2(s)] --> G3[G3(s)] --> C(s);
+```
+
+*Equivale a:*
+
+```mermaid
+graph LR
+    R(s) --> G_eq[G1(s)G2(s)G3(s)] --> C(s);
+```
+
+### 1.2. Blocos em Paralelo
+
+  * **Descrição:** Blocos que partem do mesmo sinal de entrada e têm suas saídas somadas (ou subtraídas).
+  * **Regra:** Somam-se (ou subtraem-se) as funções de transferência.
+  * **Equivalente:** $G_{eq}(s) = \pm G_1(s) \pm G_2(s) \pm G_3(s)$
+
+<!-- end list -->
+
+```mermaid
+graph TD
+    R(s) -- " " --> G1[G1(s)];
+    R(s) -- " " --> G2[G2(s)];
+    R(s) -- " " --> G3[G3(s)];
+    G1 --> S(Σ);
+    G2 --> S;
+    G3 --> S;
+    S --> C(s);
+```
+
+*Equivale a:*
+
+```mermaid
+graph LR
+    R(s) --> G_eq[±G1(s) ±G2(s) ±G3(s)] --> C(s);
+```
+
+### 1.3. Malha de Realimentação (Feedback)
+
+  * **Descrição:** A topologia mais comum, onde a saída $C(s)$ é "amostrada" por $H(s)$ e realimentada para o somador de entrada. $G(s)$ é o caminho direto e $H(s)$ é o caminho de realimentação.
+  * **Regra:** Esta é a fórmula de redução de malha fechada.
+  * **Equivalente:** $G_{eq}(s) = \frac{G(s)}{1 \pm G(s)H(s)}$
+      * **Nota:** O sinal no denominador (1 **±** ...) é **oposto** ao sinal no somador de realimentação. A maioria dos sistemas de controle usa realimentação negativa (sinal `-` no somador), resultando em `1 + G(s)H(s)` no denominador.
+
+-----
+
+## 2\. Análise de Resposta Transitória (Sistemas de 2ª Ordem)
+
+Após reduzir um diagrama de blocos (especialmente um com realimentação), frequentemente obtemos uma função de transferência de segunda ordem.
+
+**Forma Típica (Ex: Exemplo 5.4):**
+$$T(s) = \frac{K}{s^2 + as + K}$$
+
+**Forma Padrão (para análise):**
+$$T(s) = \frac{\omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}$$
+
+Comparando as duas formas, podemos extrair os parâmetros-chave do sistema.
+
+### 2.1. Parâmetros Fundamentais
+
+  * **$\omega_n$ (Frequência Natural):** A frequência com que o sistema oscilaria se não houvesse amortecimento ($\zeta=0$).
+      * Comparando $T(s)$: $\omega_n^2 = K \implies \omega_n = \sqrt{K}$
+  * **$\zeta$ (Zeta - Fator de Amortecimento):** Determina o tipo de resposta (subamortecida, crítica, etc.).
+      * Comparando $T(s)$: $2\zeta\omega_n = a \implies \zeta = a / (2\omega_n)$
+
+### 2.2. Métricas de Desempenho (para $\zeta < 1$)
+
+Para um sistema **subamortecido** ($0 < \zeta < 1$), que é o único caso que oscila e tem ultrapassagem, podemos calcular:
+
+  * **%OS (Ultrapassagem Percentual / %UP):** O quanto o sistema ultrapassa o valor final.
+      * $\%OS = 100 \cdot e^{\frac{-\zeta \pi}{\sqrt{1 - \zeta^2}}}$
+  * **$T_s$ (Tempo de Acomodação):** O tempo para a resposta ficar dentro de 2% do valor final.
+      * $T_s = \frac{4}{\zeta\omega_n}$
+      * Também definido como $T_s = 4 / \sigma_d$, onde $\sigma_d = \zeta\omega_n$ é a parte real dos polos.
+  * **$T_p$ (Tempo de Pico):** O tempo para atingir o primeiro pico (o máximo da ultrapassagem).
+      * $T_p = \frac{\pi}{\omega_n \sqrt{1 - \zeta^2}}$
+      * Também definido como $T_p = \pi / \omega_d$, onde $\omega_d = \omega_n \sqrt{1-\zeta^2}$ é a parte imaginária dos polos.
+
+-----
+
+## 3\. Exemplos da Aula
+
+### 3.1. Exemplo 5.3: Análise de Resposta
+
+  * **Problema:** Para o sistema com $G(s) = \frac{25}{s(s+5)}$ e realimentação unitária, encontrar $T_p$, %OS e $T_s$.
+  * **Solução:**
+    1.  **FTMF:** $T(s) = \frac{G}{1+G} = \frac{25 / (s(s+5))}{1 + 25 / (s(s+5))} = \frac{25}{s^2 + 5s + 25}$
+    2.  **Parâmetros:**
+          * $\omega_n^2 = 25 \implies \omega_n = 5$
+          * $2\zeta\omega_n = 5 \implies 2 \cdot \zeta \cdot 5 = 5 \implies \zeta = 0.5$
+    3.  **Métricas:** (Sistema subamortecido, pois $\zeta < 1$)
+          * %OS = 16.3%
+          * $T_s = 4 / (\zeta\omega_n) = 4 / (0.5 \cdot 5) = 1.6 \text{ s}$
+          * $T_p = \pi / (\omega_n \sqrt{1 - \zeta^2}) = \pi / (5 \sqrt{1 - 0.5^2}) = 0.726 \text{ s}$
+
+### 3.2. Exemplo 5.4: Projeto de Ganho
+
+  * **Problema:** Para o sistema com $G(s) = \frac{K}{s(s+5)}$, determinar $K$ para uma ultrapassagem de 10%.
+  * **Solução:**
+    1.  **FTMF:** $T(s) = \frac{K}{s^2 + 5s + K}$
+    2.  **Relações:** $2\zeta\omega_n = 5$ e $\omega_n = \sqrt{K}$.
+    3.  **Relação $\zeta$-K:** Substituindo $\omega_n$, temos $\zeta = 5 / (2\sqrt{K})$.
+    4.  **Meta:** Uma ultrapassagem de 10% exige (pela fórmula de %OS) um $\zeta \approx 0.591$.
+    5.  **Resultado:** $0.591 = 5 / (2\sqrt{K}) \implies K = (5 / (2 \cdot 0.591))^2 \approx 17.9$.
+
+-----
+
+## 4\. Tópicos da Lista de Exercícios
+
+A lista de exercícios aplica diretamente esses conceitos:
+
+  * **Exercício 11 (Fig. P5.11):** Pede para encontrar %UP, Ts e Tp para $G(s) = \frac{225}{s(s+15)}$. (Idêntico ao Exemplo 5.3).
+  * **Exercício 14 (Fig. P5.14):** Pede para encontrar $K$ para 10% de %UP para $G(s) = \frac{K}{s(s+30)}$. (Idêntico ao Exemplo 5.4).
+  * **Exercício 15 (Fig. P5.15):** Pede para projetar $K$ e $a$ em $G(s) = \frac{K}{s(s+a)}$ para atingir metas de Ts e %UP.
+  * **Exercício 16 (Fig. P5.16):** Um problema de projeto mais avançado onde é preciso encontrar $K_1$ (ganho) e $K_2s$ (realimentação de tacômetro) para atingir metas de Tp e Ts.
+  * **Exercício 17 (Fig. P5.17):** Um exercício completo. Primeiro, pede para **reduzir** um diagrama de blocos complexo a uma única $T(s)$. Depois, pede para **analisar** essa $T(s)$ e encontrar todas as métricas (ζ, ωn, %UP, Ts, Tp, etc.).
+
+Gostaria que eu resolvesse passo a passo algum exercício da lista, como o Exercício 11?
