@@ -272,6 +272,81 @@ A lista de exercícios aplica diretamente esses conceitos:
 
 #Aula 11
 
-Apanhado da Aula 11: EstabilidadeA "Aula 11" foca em um dos conceitos mais importantes da engenharia de controle: determinar se um sistema é estável, instável ou marginalmente estável. A aula explica as definições de estabilidade e introduz o Critério de Estabilidade de Routh-Hurwitz como a principal ferramenta de análise.1. Definições de EstabilidadeA estabilidade de um sistema pode ser definida de duas maneiras principais:Baseado na Resposta Natural (a resposta do sistema a si mesmo, sem entradas):Sistema Estável: A resposta natural tende a zero à medida que o tempo tende ao infinito.Sistema Instável: A resposta natural tende ao infinito à medida que o tempo tende ao infinito.Sistema Marginalmente Estável: A resposta natural não decai nem cresce, mas permanece constante ou oscila indefinidamente.Baseado na Resposta Total (BIBO - Bounded-Input, Bounded-Output):Sistema Estável (BIBO): Toda entrada limitada (finita) gera uma saída limitada (finita).Sistema Instável (BIBO): Existe pelo menos uma entrada limitada que gera uma saída ilimitada (infinita).2. Estabilidade e os Polos do SistemaA estabilidade de um sistema é determinada exclusivamente pela localização dos polos da sua função de transferência de malha fechada no plano-s:Semi-Plano Esquerdo (LHP): Polos com parte real negativa (ex: -2.672, -0.164).Resultado: Sistema ESTÁVEL. A resposta decai com o tempo.Semi-Plano Direito (RHP): Polos com parte real positiva (ex: +0.0434).Resultado: Sistema INSTÁVEL. A resposta cresce exponencialmente ao infinito.Eixo Imaginário ($j\omega$): Polos com parte real nula (polos na origem ou pares imaginários puros).Resultado: Sistema MARGINALMENTE ESTÁVEL (se os polos não forem repetidos).3. O Critério de Estabilidade de Routh-HurwitzO Critério de Routh-Hurwitz é um método poderoso que permite determinar quantos polos estão no RHP sem ter que calcular as raízes do polinômio do denominador.A análise é feita construindo-se uma tabela (Tabela de Routh) a partir dos coeficientes do polinômio do denominador da função de transferência de malha fechada.Regra Principal:O número de trocas de sinal na primeira coluna da Tabela de Routh é exatamente igual ao número de polos no semi-plano direito (RHP).No Exemplo 6.1, o polinômio $s^{3}+10s^{2}+31s+1030$ resultou em uma primeira coluna com [1, 10, -72, 1030].Isso apresenta duas trocas de sinal (de 10 para -72, e de -72 para 1030).Conclusão: O sistema tem 2 polos no RHP e é instável.4. Casos Especiais do Critério de Routh-HurwitzExistem duas situações especiais que exigem procedimentos diferentes:Caso 1: Zero Apenas na Primeira ColunaO Problema: Um 0 aparece na primeira coluna (Exemplo 6.2), o que causaria uma divisão por zero no cálculo da próxima linha.A Solução (Método do Épsilon): O zero é substituído por um número muito pequeno e positivo, $\epsilon$. A tabela é concluída usando $\epsilon$, e os sinais da primeira coluna são analisados fazendo o limite de $\epsilon \to 0^+$.Caso 2: Uma Linha Inteira de ZerosO Problema: Uma linha inteira da tabela se torna zero (Exemplo 6.4).O Significado: Isso indica que o polinômio possui raízes simétricas em relação à origem (ex: $s = \pm 2$ ou $s = \pm j5$ ou $s = \pm 1 \pm j3$).A Solução (Polinômio Auxiliar):Forma-se um Polinômio Auxiliar, $P(s)$, com os coeficientes da linha acima da linha de zeros.Calcula-se a derivada desse polinômio, $\frac{dP(s)}{ds}$.Os coeficientes da derivada são usados para substituir a linha de zeros, e a tabela continua.5. Aplicação: Projeto de Estabilidade (Exemplo 6.9)O critério de Routh-Hurwitz é usado para "Projeto de Estabilidade", onde se determina a faixa de valores de um ganho $K$ que torna o sistema estável.Problema: Encontrar $K$ para $G(s)=\frac{K}{s(s+7)(s+11)}$.Método:Encontra-se o polinômio do denominador de malha fechada, que incluirá $K$: $s^{3}+18s^{2}+77s+K$.Constrói-se a Tabela de Routh, mantendo $K$ como uma variável.Para estabilidade, todos os termos da primeira coluna devem ser positivos (assumindo $K>0$).Isso gera inequações. No Exemplo 6.9, as condições foram:Da linha $s^0$: $K > 0$Da linha $s^1$: $\frac{1386-K}{18} > 0 \implies K < 1386$Resultado: O sistema é estável para $0 < K < 1386$. É marginalmente estável em $K = 1386$ (quando a linha $s^1$ se torna zero) e instável para $K > 1386$.
+Aqui está o apanhado completo da "Aula 11 - Estabilidade", formatado em Markdown e sem os ``, pronto para ser usado no GitHub.
+
+---
+
+# Apanhado da Aula 11: Estabilidade
+
+A "Aula 11" foca em um dos conceitos mais importantes da engenharia de controle: determinar se um sistema é estável, instável ou marginalmente estável. A aula explica as definições de estabilidade e introduz o **Critério de Estabilidade de Routh-Hurwitz** como a principal ferramenta de análise.
+
+## 1. Definições de Estabilidade
+
+A estabilidade de um sistema pode ser definida de duas maneiras principais:
+
+* **Baseado na Resposta Natural** (a resposta do sistema a si mesmo, sem entradas):
+    * **Sistema Estável:** A resposta natural tende a zero à medida que o tempo tende ao infinito.
+    * **Sistema Instável:** A resposta natural tende ao infinito à medida que o tempo tende ao infinito.
+    * **Sistema Marginalmente Estável:** A resposta natural não decai nem cresce, mas permanece constante ou oscila indefinidamente.
+
+* **Baseado na Resposta Total (BIBO - Bounded-Input, Bounded-Output):**
+    * **Sistema Estável (BIBO):** Toda entrada limitada (finita) gera uma saída limitada (finita).
+    * **Sistema Instável (BIBO):** Existe pelo menos uma entrada limitada que gera uma saída ilimitada (infinita).
+
+## 2. Estabilidade e os Polos do Sistema
+
+A estabilidade de um sistema é determinada **exclusivamente** pela localização dos **polos** da sua função de transferência de malha fechada no plano-s:
+
+* **Semi-Plano Esquerdo (LHP):** Polos com parte real negativa (ex: -2.672, -0.164).
+    * **Resultado:** Sistema **ESTÁVEL**. A resposta decai com o tempo.
+* **Semi-Plano Direito (RHP):** Polos com parte real positiva (ex: +0.0434).
+    * **Resultado:** Sistema **INSTÁVEL**. A resposta cresce exponencialmente ao infinito.
+* **Eixo Imaginário ($j\omega$):** Polos com parte real nula (polos na origem ou pares imaginários puros).
+    * **Resultado:** Sistema **MARGINALMENTE ESTÁVEL** (se os polos não forem repetidos).
+
+## 3. O Critério de Estabilidade de Routh-Hurwitz
+
+O Critério de Routh-Hurwitz é um método poderoso que permite determinar **quantos polos** estão no RHP **sem ter que calcular** as raízes do polinômio do denominador.
+
+A análise é feita construindo-se uma tabela (Tabela de Routh) a partir dos coeficientes do polinômio do denominador da função de transferência de malha fechada.
+
+**Regra Principal:**
+O número de **trocas de sinal** na **primeira coluna** da Tabela de Routh é exatamente igual ao número de **polos no semi-plano direito (RHP)**.
+
+* No **Exemplo 6.1**, o polinômio $s^{3}+10s^{2}+31s+1030$ resultou em uma primeira coluna com `[1, 10, -72, 1030]`.
+* Isso apresenta **duas trocas de sinal** (de 10 para -72, e de -72 para 1030).
+* **Conclusão:** O sistema tem 2 polos no RHP e é **instável**.
+
+## 4. Casos Especiais do Critério de Routh-Hurwitz
+
+Existem duas situações especiais que exigem procedimentos diferentes:
+
+### Caso 1: Zero Apenas na Primeira Coluna
+
+* **O Problema:** Um `0` aparece na primeira coluna (Exemplo 6.2), o que causaria uma divisão por zero no cálculo da próxima linha.
+* **A Solução (Método do Épsilon):** O zero é substituído por um número muito pequeno e positivo, **$\epsilon$**. A tabela é concluída usando $\epsilon$, e os sinais da primeira coluna são analisados fazendo o limite de $\epsilon \to 0^+$.
+
+### Caso 2: Uma Linha Inteira de Zeros
+
+* **O Problema:** Uma linha inteira da tabela se torna zero (Exemplo 6.4).
+* **O Significado:** Isso indica que o polinômio possui raízes **simétricas em relação à origem** (ex: $s = \pm 2$ ou $s = \pm j5$ ou $s = \pm 1 \pm j3$).
+* **A Solução (Polinômio Auxiliar):**
+    1.  Forma-se um **Polinômio Auxiliar, $P(s)$**, com os coeficientes da linha *acima* da linha de zeros.
+    2.  Calcula-se a **derivada** desse polinômio, $\frac{dP(s)}{ds}$.
+    3.  Os coeficientes da derivada são usados para **substituir** a linha de zeros, e a tabela continua.
+
+## 5. Aplicação: Projeto de Estabilidade (Exemplo 6.9)
+
+O critério de Routh-Hurwitz é usado para "Projeto de Estabilidade", onde se determina a **faixa de valores de um ganho $K$** que torna o sistema estável.
+
+* **Problema:** Encontrar $K$ para $G(s)=\frac{K}{s(s+7)(s+11)}$.
+* **Método:**
+    1.  Encontra-se o polinômio do denominador de malha fechada, que incluirá $K$: $s^{3}+18s^{2}+77s+K$.
+    2.  Constrói-se a Tabela de Routh, mantendo $K$ como uma variável.
+    3.  Para estabilidade, **todos os termos da primeira coluna devem ser positivos** (assumindo $K>0$).
+    4.  Isso gera inequações. No Exemplo 6.9, as condições foram:
+        * Da linha $s^0$: $K > 0$
+        * Da linha $s^1$: $\frac{1386-K}{18} > 0 \implies K < 1386$
+* **Resultado:** O sistema é **estável** para $0 < K < 1386$. É **marginalmente estável** em $K = 1386$ (quando a linha $s^1$ se torna zero) e **instável** para $K > 1386$.
 
 
