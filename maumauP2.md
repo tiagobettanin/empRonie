@@ -270,12 +270,6 @@ A lista de exercícios aplica diretamente esses conceitos:
   * **Exercício 16 (Fig. P5.16):** Um problema de projeto mais avançado onde é preciso encontrar $K_1$ (ganho) e $K_2s$ (realimentação de tacômetro) para atingir metas de Tp e Ts.
   * **Exercício 17 (Fig. P5.17):** Um exercício completo. Primeiro, pede para **reduzir** um diagrama de blocos complexo a uma única $T(s)$. Depois, pede para **analisar** essa $T(s)$ e encontrar todas as métricas (ζ, ωn, %UP, Ts, Tp, etc.).
 
-#Aula 11
-
-Aqui está o apanhado completo da "Aula 11 - Estabilidade", formatado em Markdown e sem os ``, pronto para ser usado no GitHub.
-
----
-
 # Apanhado da Aula 11: Estabilidade
 
 A "Aula 11" foca em um dos conceitos mais importantes da engenharia de controle: determinar se um sistema é estável, instável ou marginalmente estável. A aula explica as definições de estabilidade e introduz o **Critério de Estabilidade de Routh-Hurwitz** como a principal ferramenta de análise.
