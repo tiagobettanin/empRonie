@@ -89,4 +89,4 @@ O objetivo é carbonatar a cerveja e adicionar o efeito do jambu.
 7.  **Carbonatar:** Deixe as garrafas em temperatura ambiente por 5-10 dias para criar o gás.
 8.  **Gelar:** Refrigere as garrafas antes de consumir.
 
-9.  Deus abençoe o grupo! 🙏
+# Deus abençoe o grupo! 🙏
