@@ -343,4 +343,91 @@ O critério de Routh-Hurwitz é usado para "Projeto de Estabilidade", onde se de
         * Da linha $s^1$: $\frac{1386-K}{18} > 0 \implies K < 1386$
 * **Resultado:** O sistema é **estável** para $0 < K < 1386$. É **marginalmente estável** em $K = 1386$ (quando a linha $s^1$ se torna zero) e **instável** para $K > 1386$.
 
+-----
 
+# Apanhado da Aula 12: Erro em Regime Permanente
+
+A **Aula 12** foca em como quantificar o desempenho de um sistema de controle em malha fechada *após* toda a resposta transitória (oscilações, subidas) ter terminado.
+
+O **Erro em Regime Permanente ($e_{ss}$)** é a diferença entre o sinal de entrada (o que você *quer* que o sistema faça, $R(s)$) e o sinal de saída (o que o sistema *realmente* está fazendo, $C(s)$) quando o tempo tende ao infinito ($t \to \infty$).
+
+**Nota Fundamental:** A análise de erro em regime permanente **só é válida se o sistema for ESTÁVEL**. Se o sistema for instável, a saída $C(t)$ (e o erro) tenderá ao infinito, tornando o conceito de um "erro permanente finito" irrelevante.
+
+## 1\. Entradas de Teste Padrão
+
+Para avaliar o erro, usamos três tipos de sinais de entrada padrão, que simulam diferentes comandos:
+
+| Nome da Entrada | Função no Tempo ($r(t)$) | Transformada $R(s)$ | Significado Físico |
+| :--- | :--- | :--- | :--- |
+| **Degrau (Step)** | $A$ ou $A \cdot u(t)$ | $A/s$ | Manter uma **posição** constante |
+| **Rampa (Ramp)** | $A \cdot t \cdot u(t)$ | $A/s^2$ | Seguir uma **velocidade** constante |
+| **Parábola (Parabola)** | $\frac{A}{2} \cdot t^2 \cdot u(t)$ | $A/s^3$ | Seguir uma **aceleração** constante |
+
+## 2\. A Ferramenta Central: Teorema do Valor Final (TVF)
+
+A fórmula matemática para encontrar *qualquer* erro em regime permanente é o **Teorema do Valor Final (TVF)**:
+
+$$e_{ss} = e(\infty) = \lim_{t \to \infty} e(t) = \lim_{s \to 0} sE(s)$$
+
+Onde $E(s)$ é o sinal de erro no domínio de Laplace.
+
+## 3\. O "Tipo" do Sistema: O Conceito Mais Importante
+
+O **"Tipo"** de um sistema determina sua capacidade de "rastrear" (seguir) os sinais de entrada com erro zero ou finito.
+
+**Definição:** O Tipo do Sistema é o **número de integradores puros (polos em $s=0$)** na função de transferência de malha aberta **$G(s)$**.
+
+  * **Sistema Tipo 0:** $G(s)$ não tem polos em $s=0$. (Ex: $G(s) = \frac{K}{(s+1)(s+2)}$)
+  * **Sistema Tipo 1:** $G(s)$ tem **um** polo em $s=0$. (Ex: $G(s) = \frac{K}{s(s+1)(s+2)}$)
+  * **Sistema Tipo 2:** $G(s)$ tem **dois** polos em $s=0$. (Ex: $G(s) = \frac{K}{s^2(s+1)(s+2)}$)
+
+## 4\. O Atalho: Constantes de Erro Estático (Para Realimentação Unitária)
+
+Para sistemas **estáveis** e com **realimentação unitária** (onde $H(s)=1$, como na maioria dos exercícios da lista), podemos usar atalhos chamados **Constantes de Erro Estático**.
+
+### Fórmulas das Constantes:
+
+| Constante | Fórmula | Associada à Entrada |
+| :--- | :--- | :--- |
+| **$K_p$ (Constante de Erro de Posição)** | $K_p = \lim_{s \to 0} G(s)$ | Degrau |
+| **$K_v$ (Constante de Erro de Velocidade)** | $K_v = \lim_{s \to 0} sG(s)$ | Rampa |
+| **$K_a$ (Constante de Erro de Aceleração)**| $K_a = \lim_{s \to 0} s^2 G(s)$ | Parábola |
+
+### Tabela de Fórmulas do Erro (O Resumo da Aula)
+
+Combinando o "Tipo do Sistema" com as "Constantes de Erro", podemos prever o erro em regime permanente para as entradas padrão. ($A$ é a amplitude da entrada, ex: $50u(t) \implies A=50$).
+
+| | **Entrada Degrau (Posição)** | **Entrada Rampa (Velocidade)** | **Entrada Parábola (Aceleração)** |
+| :--- | :--- | :--- | :--- |
+| **Sistema Tipo 0** | $K_p = \text{constante}$ <br> $e_{ss} = \frac{A}{1 + K_p}$ | $K_v = 0$ <br> $e_{ss} = \infty$ | $K_a = 0$ <br> $e_{ss} = \infty$ |
+| **Sistema Tipo 1** | $K_p = \infty$ <br> $e_{ss} = 0$ | $K_v = \text{constante}$ <br> $e_{ss} = \frac{A}{K_v}$ | $K_a = 0$ <br> $e_{ss} = \infty$ |
+| **Sistema Tipo 2** | $K_p = \infty$ <br> $e_{ss} = 0$ | $K_v = \infty$ <br> $e_{ss} = 0$ | $K_a = \text{constante}$ <br> $e_{ss} = \frac{A}{K_a}$ |
+
+### O que essa tabela significa na prática:
+
+  * **Sistema Tipo 0:** Só consegue "seguir" uma posição constante, e mesmo assim terá um erro. Não consegue acompanhar uma velocidade ou aceleração constante (o erro cresce para sempre).
+  * **Sistema Tipo 1:** Consegue seguir perfeitamente uma posição constante (erro zero). Consegue seguir uma velocidade constante, mas ficará "atrasado" por um erro finito constante.
+  * **Sistema Tipo 2:** Consegue seguir perfeitamente uma posição e uma velocidade. Consegue seguir uma aceleração constante, mas ficará "atrasado" por um erro finito constante.
+
+## 5\. (Adição Importante) Cuidado com Realimentação NÃO UNITÁRIA
+
+A lista de exercícios (ex: Problemas 13, 42, 43) mostra sistemas onde $H(s) \neq 1$.
+
+Nesses casos, **as fórmulas de $K_p, K_v, K_a$ e a tabela acima NÃO SÃO VÁLIDAS.**
+
+Você deve usar o método fundamental (o Teorema do Valor Final aplicado à definição de erro):
+
+1.  **Ache a Função de Transferência de Malha Fechada $T(s)$:**
+    $$T(s) = \frac{G(s)}{1 + G(s)H(s)}$$
+
+2.  **Calcule a Saída $C(s)$:**
+    $$C(s) = R(s) \cdot T(s)$$
+
+3.  **Ache o Erro $E(s)$:**
+    O erro é **sempre** $E(s) = R(s) - C(s)$.
+    $$E(s) = R(s) - R(s)T(s) = R(s) \cdot [1 - T(s)]$$
+
+4.  **Aplique o Teorema do Valor Final (TVF):**
+    $$e_{ss} = \lim_{s \to 0} sE(s) = \lim_{s \to 0} s \cdot R(s) \cdot [1 - T(s)]$$
+
+Esta fórmula geral funciona para **TODOS** os sistemas, unitários ou não.
