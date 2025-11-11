@@ -47,10 +47,10 @@ Em vez de testar infinitos pontos, usamos um conjunto de regras para esboçar ra
 5.  **Comportamento no Infinito (Assíntotas):**
     * Quando há mais polos ($n$) do que zeros ($m$), $n-m$ ramos terminam no infinito.
     * Esses ramos seguem linhas retas chamadas **assíntotas**.
-    * **Ponto de Interseção (Centróide):** As assíntotas se cruzam no eixo real em um ponto $\sigma_a$:
-        $$\sigma_{a}=\frac{\sum \text{polos finitos}-\sum \text{zeros finitos}}{\text{\# polos finitos}-\text{\# zeros finitos}}$$
-    * **Ângulos das Assíntotas:** Os ângulos $\theta_a$ que elas formam com o eixo real são:
-        $$\theta_{a}=\frac{(2k+1)\pi}{\text{\# polos finitos}-\text{\# zeros finitos}}$$
+* **Ponto de Interseção (Centróide):** As assíntotas se cruzam no eixo real em um ponto $\sigma_a$:
+    $$\sigma_{a}=\frac{\sum \text{polos finitos}-\sum \text{zeros finitos}}{\text{número de polos finitos}-\text{número de zeros finitos}}$$
+* **Ângulos das Assíntotas:** Os ângulos $\theta_a$ que elas formam com o eixo real são:
+    $$\theta_{a}=\frac{(2k+1)\pi}{\text{número de polos finitos}-\text{número de zeros finitos}}$$
 
 ---
 
