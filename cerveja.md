@@ -90,3 +90,78 @@ O objetivo é carbonatar a cerveja e adicionar o efeito do jambu.
 8.  **Gelar:** Refrigere as garrafas antes de consumir.
 
 # Deus abençoe o grupo! 🙏
+
+# Etapa final 18/11
+
+Aqui está a mensagem completa, formatada e pronta para copiar e colar no WhatsApp, sem as citações e organizada para leitura fácil:
+
+***
+
+Fala pessoal! 🍻
+
+Aqui estão as decisões finais para as etapas de **Maturação** e **Envase**, junto com o passo a passo detalhado da nossa **estratégia do Jambu** e da carbonatação.
+
+---
+
+### **7. Maturação (Seção 7.2)**
+
+* **1. Dias de maturação:** `12 dias`
+    * _Justificativa:_ O documento permite de 5 a 14 dias. Como vamos usar uma geladeira comum (que não chega a 0°C), precisamos de mais tempo para garantir a decantação dos sólidos e deixar a cerveja cristalina.
+
+### **8. Carbonatação e Envase (Seção 8.2)**
+
+* **1. Quantidade de açúcar:** `6 g/L`
+    * _Justificativa:_ A faixa é de 3g/L a 8g/L. Escolhemos **6 g/L** para garantir boa espuma sem excesso de gás, pois gás demais atrapalharia a sensação do jambu na boca.
+
+---
+
+### **PASSO A PASSO: A Estratégia do Jambu e Carbonatação**
+
+Aqui está o roteiro para garantir que o jambu funcione e a cerveja tenha gás (carbonatação natural).
+
+#### **O que é a "Calda de Açúcar" (Priming)?**
+Não vamos jogar açúcar cristal direto na garrafa (isso dá contaminação e gás desigual).
+**A Calda (Priming)** é simplesmente ferver a quantidade certa de açúcar com um pouco de água. Isso esteriliza o açúcar e facilita a mistura homogênea.
+
+#### **Roteiro de Execução:**
+
+**1. Maturação na Geladeira (Dia 0 a 12)**
+* Assim que acabar a fermentação, coloque o balde na parte mais fria da geladeira comum (fundo da prateleira de baixo).
+* Deixe quieto por **12 dias** para limpar o sabor e clarear a cerveja. **Não mexa no balde** para não levantar a sujeira do fundo.
+
+**2. Preparo do "Tempero" (No dia do Envase)**
+* Pegue a infusão de jambu (flores na vodka) que deixamos curtindo.
+* Coe o líquido usando um filtro de papel (de café) para retirar os pedaços de flor. Reserve o líquido limpo.
+
+**3. O Teste de Dosagem (O Pulo do Gato)**
+* Tire uma amostra de 100ml da cerveja gelada.
+* Use um conta-gotas e pingue o extrato de jambu (ex: 1 gota, prove; 2 gotas, prove).
+* Achou o ponto ideal? Faça a regra de três para o volume total (Ex: se usou 2 gotas para 100ml, usaremos 20 gotas por litro).
+
+**4. Preparo da Calda de Açúcar (Priming)**
+* Pese **6g de açúcar para cada litro** de cerveja que temos.
+* Em uma panela pequena, misture o açúcar com um pouco de água (apenas o suficiente para dissolver).
+* Ferva por 3 a 5 minutos para esterilizar. Deixe esfriar (tampado).
+
+**5. A Grande Mistura**
+* Pegue um balde limpo e sanitizado.
+* Jogue a calda de açúcar no fundo.
+* Jogue a quantidade calculada de **Extrato de Jambu** no fundo.
+* Transfira a cerveja do fermentador para este balde com cuidado (usando sifão ou mangueira) para misturar tudo sem oxigenar.
+
+**6. Envase**
+* Encha as garrafas sanitizadas e feche com as tampinhas.
+* Deixe as garrafas em temperatura ambiente por cerca de 7 a 10 dias. A levedura vai comer esse açúcar e criar o gás.
+
+---
+
+### **⚠️ 2 ALERTAS IMPORTANTES SOBRE O AÇÚCAR**
+
+**1. Priming NÃO é Caramelo!**
+Nunca deixe o açúcar queimar ou ficar marrom. Se virar caramelo, a levedura não come e a cerveja fica sem gás. Tem que ser apenas um xarope transparente/amarelo claro.
+
+**2. Espere Esfriar!**
+Só misture a calda na cerveja quando ela estiver em **temperatura ambiente** (uns 25°C). Se jogar fervendo, mata o fermento.
+
+#Bora fazer essa cerveja campeã! 🧪🌿
+# Deus abençoe o grupo! 🙏
