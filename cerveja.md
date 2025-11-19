@@ -93,22 +93,12 @@ O objetivo é carbonatar a cerveja e adicionar o efeito do jambu.
 
 # Etapa final 18/11
 
-Aqui está a mensagem completa, formatada e pronta para copiar e colar no WhatsApp, sem as citações e organizada para leitura fácil:
-
-***
-
-Fala pessoal! 🍻
-
-Aqui estão as decisões finais para as etapas de **Maturação** e **Envase**, junto com o passo a passo detalhado da nossa **estratégia do Jambu** e da carbonatação.
-
----
-
-### **7. Maturação (Seção 7.2)**
+### **8. Maturação (Seção 7.2)**
 
 * **1. Dias de maturação:** `12 dias`
     * _Justificativa:_ O documento permite de 5 a 14 dias. Como vamos usar uma geladeira comum (que não chega a 0°C), precisamos de mais tempo para garantir a decantação dos sólidos e deixar a cerveja cristalina.
 
-### **8. Carbonatação e Envase (Seção 8.2)**
+### **9. Carbonatação e Envase (Seção 8.2)**
 
 * **1. Quantidade de açúcar:** `6 g/L`
     * _Justificativa:_ A faixa é de 3g/L a 8g/L. Escolhemos **6 g/L** para garantir boa espuma sem excesso de gás, pois gás demais atrapalharia a sensação do jambu na boca.
